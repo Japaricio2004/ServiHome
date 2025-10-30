@@ -1,0 +1,255 @@
+    <!doctype html>
+    <html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Contacto - SERVISHOME</title>
+        <meta name="description" content="Sección de contacto y CTA de SERVISHOME" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+        <style>
+        body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+        @keyframes float {
+            0%,100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .floating-icon { animation: float 3s ease-in-out infinite; }
+        .delay-500 { animation-delay: 500ms; }
+        .delay-1000 { animation-delay: 1000ms; }
+        .delay-2000 { animation-delay: 2000ms; }
+        @media (prefers-reduced-motion: reduce) { .floating-icon { animation: none; } }
+        </style>
+    </head>
+    <body class="bg-[#F8F9FA] dark:bg-[#0F0F0F] text-gray-900 dark:text-white antialiased">
+        <!-- Header (presente en todas las páginas excepto segmentos.html) -->
+        <header id="site-header" class="sticky top-0 z-50 bg-white dark:bg-[#1E1E1E] border border-[#E9E9E9] dark:border-[#333333] transition-shadow duration-150 ease-out" role="banner">
+        <div class="px-6 sm:px-4 py-3">
+            <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3 sm:gap-2">
+                <a href="index.html" aria-label="SERVISHOME - Inicio">
+                <img src="https://ucarecdn.com/b4a1dcd9-68ec-4eae-b51e-89a26aa5728e/-/format/auto/" alt="SERVISHOME - Servicio para el Hogar" class="h-10 w-auto sm:h-8 transition-transform duration-300 hover:scale-105" />
+                </a>
+            </div>
+
+            <nav id="desktop-nav" class="hidden sm:flex items-center gap-8 md:gap-5" aria-label="Navegación principal">
+                <a href="index.html" data-to="/inicio" class="nav-link">Inicio</a>
+                <a href="servicio.html" data-to="/servicios" class="nav-link">Servicios</a>
+                <a href="modelo.html" data-to="/modelo" class="nav-link">Modelo</a>
+                <a href="contacto.html" data-to="/contacto" class="nav-link">Contacto</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button id="mobile-menu-button" aria-controls="mobile-drawer" class="sm:hidden p-2 text-[#6E6E6E] dark:text-[#A0A0A0] hover:text-[#2B2B2B] dark:hover:text-[#E0E0E0] active:text-[#000000] dark:active:text-[#FFFFFF] transition-colors duration-150 active:scale-[0.95]" aria-label="Alternar menú" aria-expanded="false">
+                <!-- SVG inline hamburguesa (fallback) -->
+                <svg id="mobile-menu-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 6h18"></path>
+                <path d="M3 12h18"></path>
+                <path d="M3 18h18"></path>
+                </svg>
+                </button>
+
+                <a href="#contacto" class="header-cta bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:from-[#5a6fd8] hover:to-[#6a4190] text-white font-semibold text-sm px-6 py-2.5 rounded-full transition-all duration-150 ease-out active:scale-[0.98]" style="box-shadow:0 4px 12px rgba(102,126,234,0.3); height:40px; line-height:16px; display:inline-flex; align-items:center; justify-content:center;">Solicitar Servicio</a>
+            </div>
+            </div>
+        </div>
+
+        <div id="mobile-drawer" class="sm:hidden bg-white dark:bg-[#1E1E1E] border-t border-[#E9E9E9] dark:border-[#333333] py-4 hidden" role="navigation" aria-label="Menú móvil">
+            <nav class="flex flex-col gap-4 px-6">
+            <a href="index.html" data-to="/inicio" class="mobile-link">Inicio</a>
+            <a href="servicio.html" data-to="/servicios" class="mobile-link">Servicios</a>
+            <a href="modelo.html" data-to="/modelo" class="mobile-link">Modelo</a>
+            <a href="contacto.html" data-to="/contacto" class="mobile-link">Contacto</a>
+            </nav>
+        </div>
+        </header>
+        <section id="contacto" class="relative rounded-[24px] mx-6 mb-6 overflow-hidden" style="background: radial-gradient(circle at bottom right, #E8F4FD 0%, #C7E0F9 30%, transparent 70%), #FFFFFF; padding-top:10vh; padding-bottom:10vh; padding-left:clamp(4vw,8vw,8vw); padding-right:clamp(4vw,8vw,8vw);">
+        <!-- Dark overlay -->
+        <div class="absolute inset-0 hidden dark:block" style="background: radial-gradient(circle at bottom right, #1A2A3A 0%, #1E1E1E 30%, transparent 70%), #121212;"></div>
+
+        <!-- Floating icons -->
+        <div class="absolute inset-0 opacity-10 dark:opacity-20">
+            <div class="absolute top-20 left-20 floating-icon">
+            <i data-lucide="home" class="w-8 h-8 text-[#667eea]"></i>
+            </div>
+            <div class="absolute top-40 right-32 floating-icon delay-1000">
+            <i data-lucide="smartphone" class="w-6 h-6 text-[#4facfe]"></i>
+            </div>
+            <div class="absolute bottom-32 left-1/3 floating-icon delay-2000">
+            <i data-lucide="mail" class="w-7 h-7 text-[#43e97b]"></i>
+            </div>
+            <div class="absolute bottom-20 right-20 floating-icon delay-500">
+            <i data-lucide="message-circle" class="w-8 h-8 text-[#f093fb]"></i>
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-6xl mx-auto">
+            <!-- CTA principal eliminado por petición del usuario: Título, párrafo y botones 'Comenzar Ahora / Ver Demo' -->
+            <div class="w-full h-px mb-8 bg-transparent"></div>
+
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8">
+            <div class="flex flex-col gap-3">
+                <span class="text-[#868676] dark:text-[#A0A0A0] text-lg uppercase tracking-wider" style="letter-spacing:0.05em; font-weight:700;">Contacto</span>
+                <div class="flex items-center gap-4">
+                    <a href="mailto:hola@servishome.com" class="text-black dark:text-white hover:text-[#667eea] dark:hover:text-[#667eea] transition-colors duration-150 text-2xl sm:text-3xl font-semibold">hola@servishome.com</a>
+                    <div class="flex items-center gap-3">
+                        <a href="https://www.facebook.com/profile.php?id=61582935484307&rdid=IQtYb2YGJcYAFgSH&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1EdT6DJyWE%2F#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="p-2 rounded-full bg-[#1877F2] hover:scale-105 transition-transform duration-150">
+                            <span class="iconify" data-icon="mdi:facebook" data-inline="false" data-width="18" data-height="18" style="color:white;"></span>
+                        </a>
+                        <a href="https://www.instagram.com/servishomepe/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="p-2 rounded-full bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] hover:scale-105 transition-transform duration-150">
+                            <span class="iconify" data-icon="mdi:instagram" data-inline="false" data-width="18" data-height="18" style="color:white;"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-3 items-start sm:items-end">
+                <span class="text-[#868676] dark:text-[#A0A0A0] text-sm uppercase tracking-wider" style="letter-spacing:0.05em; font-weight:500;">Impacto</span>
+                <div class="flex gap-6 text-center">
+                <div>
+                    <div class="text-2xl font-bold bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">1000+</div>
+                    <div class="text-[#6B6B6B] dark:text-[#B0B0B0] text-sm">Proveedores</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold bg-gradient-to-r from-[#4facfe] to-[#00f2fe] bg-clip-text text-transparent">24/7</div>
+                    <div class="text-[#6B6B6B] dark:text-[#B0B0B0] text-sm">Soporte</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold bg-gradient-to-r from-[#43e97b] to-[#38f9d7] bg-clip-text text-transparent">98%</div>
+                    <div class="text-[#6B6B6B] dark:text-[#B0B0B0] text-sm">Satisfacción</div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        if (window.lucide) lucide.createIcons();
+
+                        const header = document.getElementById('site-header');
+                        const mobileBtn = document.getElementById('mobile-menu-button');
+                        const drawer = document.getElementById('mobile-drawer');
+                        let menuOpen = false;
+
+                        // SVG inline para menú / cerrar (fallback)
+                        const menuSvg = `
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M3 6h18"></path>
+                                <path d="M3 12h18"></path>
+                                <path d="M3 18h18"></path>
+                            </svg>`;
+
+                        const closeSvg = `
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M18 6L6 18"></path>
+                                <path d="M6 6l12 12"></path>
+                            </svg>`;
+
+                        function setMenu(open){
+                            menuOpen = !!open;
+                            if(!drawer) return;
+                            drawer.classList.toggle('hidden', !menuOpen);
+                            if(mobileBtn) mobileBtn.setAttribute('aria-expanded', String(menuOpen));
+                            if(mobileBtn){
+                                mobileBtn.querySelector('#mobile-menu-icon')?.remove();
+                                mobileBtn.insertAdjacentHTML('afterbegin', menuOpen ? closeSvg : menuSvg);
+                            }
+                        }
+
+                        const primary = document.getElementById('primary-cta');
+                        const secondary = document.getElementById('secondary-cta');
+
+                        primary?.addEventListener('click', () => { alert('Acción: Comenzar Ahora'); });
+                        secondary?.addEventListener('click', () => { alert('Acción: Ver Demo'); });
+
+                        mobileBtn?.addEventListener('click', ()=> setMenu(!menuOpen));
+                        window.addEventListener('resize', ()=> { if(window.innerWidth>=640 && menuOpen) setMenu(false); });
+
+                        // --- marcar nav activo y aplicar mismas utilidades visuales que en index.html ---
+                        function markActive(){
+                            const path = window.location.pathname.toLowerCase();
+                            const pathFile = (path.split('/').pop() || '').replace('.html','');
+                            document.querySelectorAll('.nav-link, .mobile-link').forEach(a=>{
+                                const raw = (a.getAttribute('data-to')||a.getAttribute('href')||'').toLowerCase();
+                                const target = raw.replace(/^\/+/, '').replace(/\.html$/, '').replace(/^#/, '');
+                                let isActive = false;
+                                if (target === 'inicio' || target === 'index' || target === '') {
+                                    isActive = (path === '/' || pathFile === '' || pathFile === 'index' || path.includes('index.html'));
+                                } else {
+                                    if (pathFile === target) isActive = true;
+                                    else if (pathFile === target.replace(/s$/, '')) isActive = true;
+                                    else if (pathFile.replace(/s$/, '') === target) isActive = true;
+                                    else if (path.includes(target)) isActive = true;
+                                }
+                                if(isActive){ a.classList.add('active-nav'); a.setAttribute('aria-current','page'); } else { a.classList.remove('active-nav'); a.removeAttribute('aria-current'); }
+                            });
+                        }
+
+                        markActive();
+
+                        document.querySelectorAll('.nav-link').forEach(a=> a.classList.add('text-sm','font-medium','transition-colors','duration-150','ease-out','text-[#6E6E6E]','dark:text-[#A0A0A0]','hover:text-[#2B2B2B]','dark:hover:text-[#E0E0E0]'));
+                        document.querySelectorAll('.mobile-link').forEach(a=> a.classList.add('text-sm','font-medium','transition-colors','duration-150','ease-out','text-[#6E6E6E]','dark:text-[#A0A0A0]','hover:text-[#2B2B2B]','dark:hover:text-[#E0E0E0]'));
+                        const style = document.createElement('style');
+                        style.innerHTML = `.active-nav { background-color: transparent; color: inherit !important; padding: 6px 14px; border-radius: 9999px; border: 1px solid #E5E5E5; } .dark .active-nav { background-color: transparent; color: inherit !important; border-color: #404040; }`;
+                        document.head.appendChild(style);
+
+                        // feedback inmediato al pulsar (antes de navegación)
+                        document.querySelectorAll('.nav-link, .mobile-link').forEach(a => {
+                            a.addEventListener('pointerdown', () => {
+                                document.querySelectorAll('.nav-link, .mobile-link').forEach(x=>x.classList.remove('active-nav'));
+                                a.classList.add('active-nav');
+                            });
+                        });
+
+                        // Cerrar menú al seleccionar un enlace dentro del drawer (UX móvil)
+                        const mobileLinks = document.querySelectorAll('.mobile-link');
+                        mobileLinks.forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+                        // Si se carga con #contacto, activar la CTA principal
+                        if (window.location.hash === '#contacto') {
+                            setTimeout(() => {
+                                if (primary) { primary.click(); primary.focus && primary.focus(); }
+                                else { document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+                            }, 250);
+                        }
+
+                        // Si el header CTA se pulsa estando ya en la página, disparar la CTA principal
+                        document.querySelectorAll('.header-cta').forEach(a => {
+                            a.addEventListener('click', (e) => {
+                                if (window.location.pathname.toLowerCase().includes('contacto')) {
+                                    e.preventDefault();
+                                    if (primary) { primary.click(); primary.focus && primary.focus(); }
+                                    else { document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+                                }
+                            });
+                        });
+                    });
+        </script>
+        <!-- Mejora: cerrar menú móvil al seleccionar un enlace (mejor experiencia móvil) -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                const mobileBtn = document.getElementById('mobile-menu-button');
+                const drawer = document.getElementById('mobile-drawer');
+                const mobileLinks = document.querySelectorAll('.mobile-link');
+                function closeMenu(){
+                    if(!drawer) return;
+                    drawer.classList.add('hidden');
+                    if(mobileBtn) mobileBtn.setAttribute('aria-expanded','false');
+                    if(mobileBtn){
+                        mobileBtn.innerHTML = '';
+                        const icon = document.createElement('i');
+                        icon.setAttribute('data-lucide','menu');
+                        mobileBtn.appendChild(icon);
+                        if(window.lucide) lucide.createIcons();
+                    }
+                }
+                mobileLinks.forEach(a => a.addEventListener('click', closeMenu));
+            });
+        </script>
+        </section>
+    </body>
+    </html>

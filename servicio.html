@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Servicios - SERVISHOME</title>
+    <meta name="description" content="Servicios de SERVISHOME" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+    <!-- Iconify (para iconos de terceros) -->
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+  </head>
+  <body class="bg-[#F8F9FA] dark:bg-[#0F0F0F] text-gray-900 dark:text-white">
+    <!-- Header -->
+    <header id="site-header" class="sticky top-0 z-50 bg-white dark:bg-[#1E1E1E] border border-[#E9E9E9] dark:border-[#333333] transition-shadow duration-150 ease-out" role="banner">
+      <div class="px-6 sm:px-4 py-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3 sm:gap-2">
+            <a href="index.html" aria-label="SERVISHOME - Inicio">
+              <img src="https://ucarecdn.com/b4a1dcd9-68ec-4eae-b51e-89a26aa5728e/-/format/auto/" alt="SERVISHOME - Servicio para el Hogar" class="h-10 w-auto sm:h-8 transition-transform duration-300 hover:scale-105" />
+            </a>
+          </div>
+
+          <nav id="desktop-nav" class="hidden sm:flex items-center gap-8 md:gap-5" aria-label="Navegación principal">
+            <a href="index.html" data-to="/inicio" class="nav-link">Inicio</a>
+            <a href="servicio.html" data-to="/servicios" class="nav-link">Servicios</a>
+            <a href="modelo.html" data-to="/modelo" class="nav-link">Modelo</a>
+            <a href="contacto.html" data-to="/contacto" class="nav-link">Contacto</a>
+          </nav>
+
+          <div class="flex items-center gap-4">
+                <button id="mobile-menu-button" aria-controls="mobile-drawer" class="sm:hidden p-2 text-[#6E6E6E] dark:text-[#A0A0A0] hover:text-[#2B2B2B] dark:hover:text-[#E0E0E0] active:text-[#000000] dark:active:text-[#FFFFFF] transition-colors duration-150 active:scale-[0.95]" aria-label="Alternar menú" aria-expanded="false">
+                  <!-- Icono inline (hamburguesa por defecto). Usamos SVG inline para garantizar visibilidad incluso si lucide falla -->
+                  <svg id="mobile-menu-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M3 6h18"></path>
+                    <path d="M3 12h18"></path>
+                    <path d="M3 18h18"></path>
+                  </svg>
+                </button>
+
+            <a href="#" class="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:from-[#5a6fd8] hover:to-[#6a4190] text-white font-semibold text-sm px-6 py-2.5 rounded-full transition-all duration-150 ease-out active:scale-[0.98]" style="box-shadow:0 4px 12px rgba(102,126,234,0.3); height:40px; line-height:16px; display:inline-flex; align-items:center; justify-content:center;">Solicitar Servicio</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="mobile-drawer" class="sm:hidden bg-white dark:bg-[#1E1E1E] border-t border-[#E9E9E9] dark:border-[#333333] py-4 hidden" role="navigation" aria-label="Menú móvil">
+        <nav class="flex flex-col gap-4 px-6">
+          <a href="index.html" data-to="/inicio" class="mobile-link">Inicio</a>
+          <a href="servicio.html" data-to="/servicios" class="mobile-link">Servicios</a>
+          <a href="modelo.html" data-to="/modelo" class="mobile-link">Modelo</a>
+          <a href="contacto.html" data-to="/contacto" class="mobile-link">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto py-20 px-6">
+      <section id="servicios" class="py-20 px-6 bg-white dark:bg-[#121212]">
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <h2 class="text-black dark:text-white font-bold leading-tight mb-4" style="font-size:clamp(32px,4vw,48px);">Todos los servicios que necesitas</h2>
+            <p class="text-[#6B6B6B] dark:text-[#B0B0B0] text-lg max-w-2xl mx-auto">Desde reparaciones hasta mudanzas, encuentra el servicio perfecto para tu hogar</p>
+          </div>
+
+          <!-- Services Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Plomería -->
+            <div id="card-plomeria" class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] service-card cursor-pointer" style="animation-delay:0ms;" data-service="Plomería" data-image="images/gasfitero.jpeg" data-summary="Reparaciones e instalaciones de plomería: arreglos de fugas, cambio de grifería y mantenimiento general.">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#667eea] to-[#764ba2] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <!-- Iconify: llave inglesa (mdi:wrench) -->
+                <span class="iconify" data-icon="mdi:wrench" data-inline="false" data-width="20" data-height="20" style="color:white;"></span>
+              </div>
+              <h3 class="text-black dark:text-white font-semibold text-lg mb-2">Plomería</h3>
+                <p class="text-[#6B6B6B] dark:text-[#B0B0B0] text-sm leading-relaxed">Reparaciones e instalaciones de plomería</p>
+
+                <!-- Detalle expandible dentro del card (hidden por defecto) -->
+                <div class="service-details mt-4 overflow-hidden max-h-0 transition-[max-height] duration-300" aria-hidden="true">
+                  <div class="flex flex-col gap-4 items-start">
+                      <img src="images/gasfitero.jpeg" alt="Gasfitero" class="w-full h-40 object-cover rounded-lg shadow-sm" />
+                      <p class="text-sm text-gray-700 dark:text-gray-300">Reparaciones e instalaciones de plomería: arreglos de fugas, cambio de grifería y mantenimiento general. Servicio rápido y confiable.</p>
+                    </div>
+                </div>
+              </div>
+
+            <!-- Electricidad -->
+            <div id="card-electricidad" class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] service-card cursor-pointer" style="animation-delay:100ms;" data-service="Electricidad" data-image="images/electricista.jpeg" data-summary="Instalaciones y reparaciones eléctricas: arreglos, instalación de puntos eléctricos y mantenimiento por técnicos certificados.">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#f093fb] to-[#f5576c] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <!-- Iconify: rayo / electricidad (MaterialDesign mdi:flash) -->
+                <span class="iconify" data-icon="mdi:flash" data-inline="false" data-width="20" data-height="20" style="color:white;"></span>
+              </div>
+              <h3 class="text-black dark:text-white font-semibold text-lg mb-2">Electricidad</h3>
+              <p class="text-[#6B6B6B] dark:text-[#B0B0B0] text-sm leading-relaxed">Instalaciones y reparaciones eléctricas</p>
+
+              <!-- Detalle expandible dentro del card (hidden por defecto) -->
+              <div class="service-details mt-4 overflow-hidden max-h-0 transition-[max-height] duration-300" aria-hidden="true">
+                <div class="flex flex-col gap-4 items-start">
+                  <img src="images/electricista.jpeg" alt="Electricista" class="w-full h-40 object-cover rounded-lg shadow-sm" />
+                  <p class="text-sm text-gray-700 dark:text-gray-300">Instalaciones y reparaciones eléctricas: arreglos, instalación de puntos eléctricos y mantenimiento por técnicos certificados.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Limpieza -->
+            <div id="card-limpieza" class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] service-card cursor-pointer" style="animation-delay:200ms;" data-service="Limpieza" data-image="images/limpieza.jpg" data-summary="Servicios de limpieza profesional: limpieza profunda, desinfección y mantenimiento regular para hogares y oficinas.">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#4facfe] to-[#00f2fe] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <!-- Iconify: limpieza / brillo similar a la imagen proporcionada -->
+                <span class="iconify" data-icon="mdi:sparkles" data-inline="false" data-width="20" data-height="20" style="color:white;"></span>
+              </div>
+              <h3 class="text-black dark:text-white font-semibold text-lg mb-2">Limpieza</h3>
+              <p class="text-[#6B6B6B] dark:text-[#B0B0B0] text-sm leading-relaxed">Servicios de limpieza profesional</p>
+
+              <!-- Detalle expandible dentro del card -->
+              <div class="service-details mt-4 overflow-hidden max-h-0 transition-[max-height] duration-300" aria-hidden="true">
+                <div class="flex flex-col gap-4 items-start">
+                  <img src="images/limpieza.jpg" alt="Limpieza" class="w-full h-40 object-cover rounded-lg shadow-sm" />
+                  <p class="text-sm text-gray-700 dark:text-gray-300">Servicios de limpieza profesional: limpieza profunda, desinfección y mantenimiento regular para hogares y oficinas.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mudanza -->
+            <div id="card-mudanza" class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] service-card cursor-pointer" style="animation-delay:300ms;" data-service="Mudanza" data-image="images/mudanza.jpg" data-summary="Mudanza y transporte: embalaje, carga y entrega segura de tus pertenencias con personal capacitado.">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#43e97b] to-[#38f9d7] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <!-- Iconify: camión / mudanza similar a la imagen adjunta -->
+                <span class="iconify" data-icon="mdi:truck" data-inline="false" data-width="20" data-height="20" style="color:white;"></span>
+              </div>
+              <h3 class="text-black dark:text-white font-semibold text-lg mb-2">Mudanza</h3>
+              <p class="text-[#6B6B6B] dark:text-[#B0B0B0] text-sm leading-relaxed">Servicios de mudanza y transporte</p>
+
+              <!-- Detalle expandible dentro del card -->
+              <div class="service-details mt-4 overflow-hidden max-h-0 transition-[max-height] duration-300" aria-hidden="true">
+                <div class="flex flex-col gap-4 items-start">
+                  <img src="images/mudanza.jpg" alt="Mudanza" class="w-full h-40 object-cover rounded-lg shadow-sm" />
+                  <p class="text-sm text-gray-700 dark:text-gray-300">Mudanza y transporte: embalaje, carga y entrega segura de tus pertenencias con personal capacitado.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Compras -->
+            <div id="card-compras" class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] service-card cursor-pointer" style="animation-delay:400ms;" data-service="Compras" data-image="images/compras.jpg" data-summary="Compras y mandados: hacemos compras, recogemos y entregamos lo que necesites, rápido y seguro.">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#fa709a] to-[#fee140] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <!-- Iconify: carrito de compras similar a la imagen adjunta -->
+                <span class="iconify" data-icon="mdi:cart" data-inline="false" data-width="20" data-height="20" style="color:white;"></span>
+              </div>
+              <h3 class="text-black dark:text-white font-semibold text-lg mb-2">Compras</h3>
+              <p class="text-[#6B6B6B] dark:text-[#B0B0B0] text-sm leading-relaxed">Compras y mandados a domicilio</p>
+
+              <!-- Detalle expandible dentro del card -->
+              <div class="service-details mt-4 overflow-hidden max-h-0 transition-[max-height] duration-300" aria-hidden="true">
+                <div class="flex flex-col gap-4 items-start">
+                  <img src="images/compras.jpg" alt="Compras" class="w-full h-40 object-cover rounded-lg shadow-sm" />
+                  <p class="text-sm text-gray-700 dark:text-gray-300">Compras y mandados: hacemos compras, recogemos y entregamos lo que necesites, rápido y seguro.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Reparaciones -->
+            <div id="card-reparaciones" class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] service-card cursor-pointer" style="animation-delay:500ms;" data-service="Reparaciones" data-image="images/reparaciones.jpg" data-summary="Reparaciones generales: trabajos de carpintería, ensamblaje y arreglos varios por técnicos calificados.">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#a8edea] to-[#fed6e3] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <!-- Iconify: martillo / reparaciones similar a la imagen adjunta -->
+                <span class="iconify" data-icon="mdi:hammer" data-inline="false" data-width="20" data-height="20" style="color:white;"></span>
+              </div>
+              <h3 class="text-black dark:text-white font-semibold text-lg mb-2">Reparaciones</h3>
+              <p class="text-[#6B6B6B] dark:text-[#B0B0B0] text-sm leading-relaxed">Reparaciones generales del hogar</p>
+
+              <!-- Detalle expandible dentro del card -->
+              <div class="service-details mt-4 overflow-hidden max-h-0 transition-[max-height] duration-300" aria-hidden="true">
+                <div class="flex flex-col gap-4 items-start">
+                  <img src="images/reparaciones.jpg" alt="Reparaciones" class="w-full h-40 object-cover rounded-lg shadow-sm" />
+                  <p class="text-sm text-gray-700 dark:text-gray-300">Reparaciones generales: trabajos de carpintería, ensamblaje y arreglos varios por técnicos calificados.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Sección: Nuestra propuesta de valor (movida desde valor.html) -->
+      <section class="py-20 px-6 bg-[#F8F9FA] dark:bg-[#0F0F0F]">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-black dark:text-white font-bold leading-tight mb-4" style="font-size:clamp(32px,4vw,48px);">Nuestra propuesta de valor</h2>
+            <p class="text-[#6B6B6B] dark:text-[#B0B0B0] text-lg max-w-3xl mx-auto">Lo que nos hace diferentes: una plataforma integral que conecta hogares con servicios de calidad de manera segura y confiable</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] value-card" style="animation-delay:0ms;">
+              <div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-[#667eea] to-[#764ba2] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <!-- Iconify: escudo similar al adjunto -->
+                <span class="iconify" data-icon="mdi:shield-outline" data-inline="false" data-width="28" data-height="28" style="color:white;"></span>
+              </div>
+              <h3 class="text-black dark:text-white font-bold text-xl mb-3">Plataforma Segura</h3>
+              <p class="text-[#6B6B6B] dark:text-[#B0B0B0] leading-relaxed">Tecnología segura web y móvil con proveedores validados</p>
+            </div>
+
+            <div class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] value-card" style="animation-delay:100ms;">
+              <div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-[#4facfe] to-[#00f2fe] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <!-- Iconify: reloj similar al adjunto -->
+                <span class="iconify" data-icon="mdi:clock-outline" data-inline="false" data-width="28" data-height="28" style="color:white;"></span>
+              </div>
+              <h3 class="text-black dark:text-white font-bold text-xl mb-3">Servicio Rápido</h3>
+              <p class="text-[#6B6B6B] dark:text-[#B0B0B0] leading-relaxed">Encuentra y contrata servicios de forma inmediata</p>
+            </div>
+
+            <div class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] value-card" style="animation-delay:200ms;">
+              <div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-[#43e97b] to-[#38f9d7] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <!-- Iconify: estrella / red confiable similar al adjunto -->
+                <span class="iconify" data-icon="mdi:star-outline" data-inline="false" data-width="28" data-height="28" style="color:white;"></span>
+              </div>
+              <h3 class="text-black dark:text-white font-bold text-xl mb-3">Red Confiable</h3>
+              <p class="text-[#6B6B6B] dark:text-[#B0B0B0] leading-relaxed">Proveedores verificados con calificaciones reales</p>
+            </div>
+
+            <div class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] value-card" style="animation-delay:300ms;">
+              <div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-[#fa709a] to-[#fee140] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <!-- Iconify: tarjeta de pago similar al adjunto -->
+                <span class="iconify" data-icon="mdi:credit-card-outline" data-inline="false" data-width="28" data-height="28" style="color:white;"></span>
+              </div>
+              <h3 class="text-black dark:text-white font-bold text-xl mb-3">Pagos Integrados</h3>
+              <p class="text-[#6B6B6B] dark:text-[#B0B0B0] leading-relaxed">Sistema de pagos y reservas completamente integrado</p>
+            </div>
+
+            <div class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] value-card" style="animation-delay:400ms;">
+              <div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-[#f093fb] to-[#f5576c] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <!-- Iconify: auriculares / soporte similar al adjunto -->
+                <span class="iconify" data-icon="mdi:headphones" data-inline="false" data-width="28" data-height="28" style="color:white;"></span>
+              </div>
+              <h3 class="text-black dark:text-white font-bold text-xl mb-3">Soporte 24/7</h3>
+              <p class="text-[#6B6B6B] dark:text-[#B0B0B0] leading-relaxed">Atención personalizada las 24 horas del día</p>
+            </div>
+
+            <div class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] value-card" style="animation-delay:500ms;">
+              <div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-[#a8edea] to-[#fed6e3] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <!-- Iconify: comunidad / usuarios similar al adjunto -->
+                <span class="iconify" data-icon="mdi:account-group" data-inline="false" data-width="28" data-height="28" style="color:white;"></span>
+              </div>
+              <h3 class="text-black dark:text-white font-bold text-xl mb-3">Comunidad Digital</h3>
+              <p class="text-[#6B6B6B] dark:text-[#B0B0B0] leading-relaxed">Contenido útil y comunidad que genera confianza</p>
+            </div>
+          </div>
+
+              <div class="text-center mt-16">
+            <div class="inline-flex items-center gap-2 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white px-8 py-4 rounded-3xl font-semibold text-lg shadow-[0_8px_24px_rgba(102,126,234,0.3)] hover:shadow-[0_12px_32px_rgba(102,126,234,0.4)] hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+              <i data-lucide="shield" class="w-5 h-5"></i>
+              <span>Descubre SERVISHOME</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+          <!-- Fuentes de Ingresos eliminado por petición del usuario -->
+
+      <style>
+        @keyframes slideInUp { from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);} }
+        .service-card { animation: slideInUp 0.6s ease-out both; }
+        .value-card { animation: slideInUp 0.8s ease-out both; }
+        .revenue-card { animation: slideInUp 0.8s ease-out both; }
+        @media (prefers-reduced-motion: reduce) { .service-card { animation: none; } .group:hover { transform: none !important; } }
+      </style>
+    </main>
+
+    <script>
+      if (window.lucide) lucide.createIcons();
+      document.addEventListener('DOMContentLoaded', function(){
+        const header = document.getElementById('site-header');
+        const mobileBtn = document.getElementById('mobile-menu-button');
+        const drawer = document.getElementById('mobile-drawer');
+        let menuOpen = false;
+
+        // SVG strings para icono menu / close (fallback inline)
+        const menuSvg = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 6h18"></path>
+            <path d="M3 12h18"></path>
+            <path d="M3 18h18"></path>
+          </svg>`;
+
+        const closeSvg = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 6L6 18"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>`;
+
+        function setMenu(open){
+          menuOpen = !!open;
+          if(!drawer) return;
+          drawer.classList.toggle('hidden', !menuOpen);
+          if(mobileBtn) mobileBtn.setAttribute('aria-expanded', String(menuOpen));
+          // Si lucide está disponible preferimos mantenerlo en otras páginas, pero aquí usamos el SVG inline para asegurar visibilidad
+          if(mobileBtn){
+            // Cambiar icono según estado
+            mobileBtn.querySelector('#mobile-menu-icon')?.remove();
+            mobileBtn.insertAdjacentHTML('afterbegin', menuOpen ? closeSvg : menuSvg);
+          }
+        }
+
+        mobileBtn?.addEventListener('click', ()=> setMenu(!menuOpen));
+        window.addEventListener('resize', ()=> { if(window.innerWidth>=640 && menuOpen) setMenu(false); });
+
+        // Cerrar menú al seleccionar un enlace dentro del drawer (UX móvil)
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        mobileLinks.forEach(a => a.addEventListener('click', () => setMenu(false)));
+        function onScroll(){ if(window.scrollY>0){ header.classList.add('shadow-[0_2px_6px_rgba(0,0,0,0.06)'); header.classList.add('dark:shadow-[0_2px_6px_rgba(0,0,0,0.3)]'); } else { header.classList.remove('shadow-[0_2px_6px_rgba(0,0,0,0.06)'); header.classList.remove('dark:shadow-[0_2px_6px_rgba(0,0,0,0.3)]'); } }
+        window.addEventListener('scroll', onScroll); onScroll();
+        function markActive(){
+          const path = window.location.pathname.toLowerCase();
+          const pathFile = (path.split('/').pop() || '').replace('.html','');
+          document.querySelectorAll('.nav-link, .mobile-link').forEach(a=>{
+            const raw = (a.getAttribute('data-to')||a.getAttribute('href')||'').toLowerCase();
+            const target = raw.replace(/^\/+/, '').replace(/\.html$/, '').replace(/^#/, '');
+            let isActive = false;
+            if (target === 'inicio' || target === 'index' || target === '') {
+              isActive = (path === '/' || pathFile === '' || pathFile === 'index' || path.includes('index.html'));
+            } else {
+              if (pathFile === target) isActive = true;
+              else if (pathFile === target.replace(/s$/, '')) isActive = true;
+              else if (pathFile.replace(/s$/, '') === target) isActive = true;
+              else if (path.includes(target)) isActive = true;
+            }
+            if(isActive){ a.classList.add('active-nav'); a.setAttribute('aria-current','page'); } else { a.classList.remove('active-nav'); a.removeAttribute('aria-current'); }
+          });
+        }
+        markActive();
+        document.querySelectorAll('.nav-link').forEach(a=> a.classList.add('text-sm','font-medium','transition-colors','duration-150','ease-out','text-[#6E6E6E]','dark:text-[#A0A0A0]','hover:text-[#2B2B2B]','dark:hover:text-[#E0E0E0]'));
+        document.querySelectorAll('.mobile-link').forEach(a=> a.classList.add('text-sm','font-medium','transition-colors','duration-150','ease-out','text-[#6E6E6E]','dark:text-[#A0A0A0]','hover:text-[#2B2B2B]','dark:hover:text-[#E0E0E0]'));
+        const style=document.createElement('style'); style.innerHTML = `.active-nav { background-color: transparent; color: inherit !important; padding: 6px 14px; border-radius: 9999px; border: 1px solid #E5E5E5; } .dark .active-nav { background-color: transparent; color: inherit !important; border-color: #404040; }`; document.head.appendChild(style);
+        // Añadir retroalimentación inmediata al hacer click/tap (antes de que la página navegue)
+        document.querySelectorAll('.nav-link, .mobile-link').forEach(a => {
+          a.addEventListener('pointerdown', (e) => {
+            // marcar visualmente el link clicado
+            document.querySelectorAll('.nav-link, .mobile-link').forEach(x => x.classList.remove('active-nav'));
+            a.classList.add('active-nav');
+          });
+        });
+        // --- Handlers para expandir/colapsar detalles dentro de cada card ---
+        document.querySelectorAll('.service-card').forEach(card => {
+          const details = card.querySelector('.service-details');
+          if(!details) return; // no hay detalles para este card
+          // Inicializar estado cerrado
+          details.style.maxHeight = '0px';
+          details.setAttribute('aria-hidden', 'true');
+          // Evitar que clicks en botones/enlaces internos colapsen el card
+          card.addEventListener('click', (e) => {
+            if (e.target.closest('a') || e.target.closest('button')) return;
+            const isOpen = details.style.maxHeight && details.style.maxHeight !== '0px';
+            if (isOpen) {
+              details.style.maxHeight = '0px';
+              details.setAttribute('aria-hidden', 'true');
+            } else {
+              // expandir: calcular altura necesaria y establecer
+              details.style.maxHeight = details.scrollHeight + 'px';
+              details.setAttribute('aria-hidden', 'false');
+            }
+          });
+        });
+      });
+    </script>
+    
+  </body>
+</html>

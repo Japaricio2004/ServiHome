@@ -1,0 +1,372 @@
+    <!doctype html>
+    <html lang="es">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>Modelo de Negocio Canvas - SERVISHOME</title>
+            <meta name="description" content="Modelo de Negocio Canvas interactivo - SERVISHOME" />
+            <!-- Fuentes y Tailwind (copiado desde index.html) -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+            <script>
+                // Mantener la configuración de Tailwind (modo oscuro por clase)
+                window.tailwindConfig = {
+                    darkMode: 'class',
+                }
+            </script>
+            <script src="https://cdn.tailwindcss.com"></script>
+            <!-- Lucide icons CDN -->
+            <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+            <!-- Iconify (para iconos de terceros como mdi/account-plus) -->
+            <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+            <style>
+                /* Hero frame: contorno plomo y relleno plomo-claro dentro del borde (copiado de index.html) */
+                .hero-frame {
+                    border: 2px solid #262626;
+                    background-color: #2b2b2b;
+                    border-radius: 32px;
+                    padding: 1.25rem;
+                    box-sizing: border-box;
+                }
+                @media (prefers-color-scheme: light) {
+                    .hero-frame { background-color: #efeff1; border-color: #d9d9d9; }
+                }
+                @media (prefers-color-scheme: dark) {
+                    .hero-frame { background-color: #2b2b2b; border-color: #262626; }
+                }
+
+                /* Animación del canvas (desde modelo.html) */
+                @keyframes slideInUp {
+                    from { opacity: 0; transform: translateY(30px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .canvas-card { animation: slideInUp 0.6s ease-out both; }
+                @media (prefers-reduced-motion: reduce) { .canvas-card { animation: none; } }
+
+                /* Pequeña transición para la apertura del acordeón */
+                .collapsible { transition: max-height 0.3s ease, opacity 0.3s ease; }
+            </style>
+        </head>
+    <body class="antialiased bg-[#0F0F0F] text-white" style="font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;">
+            <!-- Header (inserto para que aparezca en todas las páginas excepto segmentos) -->
+            <header id="site-header" class="sticky top-0 z-50 bg-white dark:bg-[#1E1E1E] border border-[#E9E9E9] dark:border-[#333333] transition-shadow duration-150 ease-out" role="banner">
+                <div class="px-6 sm:px-4 py-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3 sm:gap-2">
+                            <a href="index.html" aria-label="SERVISHOME - Inicio">
+                                <!-- Logo reducido por petición del usuario -->
+                                <img src="https://ucarecdn.com/b4a1dcd9-68ec-4eae-b51e-89a26aa5728e/-/format/auto/" alt="SERVISHOME - Servicio para el Hogar" class="h-8 w-auto sm:h-6 transition-transform duration-300 hover:scale-105" style="max-width:140px;" />
+                            </a>
+                        </div>
+
+                        <nav id="desktop-nav" class="hidden sm:flex items-center gap-8 md:gap-5" aria-label="Navegación principal">
+                            <a href="index.html" data-to="/inicio" class="nav-link">Inicio</a>
+                            <a href="servicio.html" data-to="/servicios" class="nav-link">Servicios</a>
+                            <a href="modelo.html" data-to="/modelo" class="nav-link">Modelo</a>
+                            <a href="contacto.html" data-to="/contacto" class="nav-link">Contacto</a>
+                        </nav>
+
+                        <div class="flex items-center gap-4">
+                            <button id="mobile-menu-button" aria-controls="mobile-drawer" class="sm:hidden p-2 text-[#6E6E6E] dark:text-[#A0A0A0] hover:text-[#2B2B2B] dark:hover:text-[#E0E0E0] active:text-[#000000] dark:active:text-[#FFFFFF] transition-colors duration-150 active:scale-[0.95]" aria-label="Alternar menú" aria-expanded="false">
+                                <!-- SVG inline hamburguesa (fallback visible si lucide no carga) -->
+                                <svg id="mobile-menu-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M3 6h18"></path>
+                                    <path d="M3 12h18"></path>
+                                    <path d="M3 18h18"></path>
+                                </svg>
+                            </button>
+
+                            <a href="#" class="bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:from-[#5a6fd8] hover:to-[#6a4190] text-white font-semibold text-sm px-6 py-2.5 rounded-full transition-all duration-150 ease-out active:scale-[0.98]" style="box-shadow:0 4px 12px rgba(102,126,234,0.3); height:40px; line-height:16px; display:inline-flex; align-items:center; justify-content:center;">Solicitar Servicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="mobile-drawer" class="sm:hidden bg-white dark:bg-[#1E1E1E] border-t border-[#E9E9E9] dark:border-[#333333] py-4 hidden" role="navigation" aria-label="Menú móvil">
+                    <nav class="flex flex-col gap-4 px-6">
+                        <a href="index.html" data-to="/inicio" class="mobile-link">Inicio</a>
+                        <a href="servicio.html" data-to="/servicios" class="mobile-link">Servicios</a>
+                        <a href="modelo.html" data-to="/modelo" class="mobile-link">Modelo</a>
+                        <a href="contacto.html" data-to="/contacto" class="mobile-link">Contacto</a>
+                    </nav>
+                </div>
+            </section>
+
+            <!-- Sección "Segmentos" migrada desde segmentos.html -->
+            <section class="py-20 px-6 bg-[#0F0F0F]" id="segmentos-migrados">
+            <div class="max-w-6xl mx-auto">
+                <!-- Header -->
+                <div class="text-center mb-16">
+                <h2 class="text-white font-bold leading-tight mb-4" style="font-size:clamp(32px,4vw,48px);">
+                    ¿Para quién es SERVISHOME?
+                </h2>
+                <p class="text-[#B0B0B0] text-lg max-w-3xl mx-auto">
+                    Conectamos a tres tipos de usuarios para crear un ecosistema de servicios domésticos completo
+                </p>
+                </div>
+
+                <!-- Segments -->
+                <div class="space-y-8">
+                <!-- Segment 1 -->
+                <div class="group bg-gradient-to-br from-[#18121e] via-[#2b2133] to-[#241a2c] border border-[#2a2130] rounded-3xl p-8 md:p-12 segment-card shadow-[0_8px_30px_rgba(20,12,30,0.6)]">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5">
+                        <div class="flex items-start gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-[#6f52d6] to-[#8b6be6] flex items-center justify-center transform transition-transform duration-300 group-hover:-translate-y-2 group-hover:scale-105 group-hover:shadow-2xl">
+                            <!-- Iconify: user with plus (MaterialDesign mdi:account-plus) -->
+                            <span class="iconify" data-icon="mdi:account-plus" data-inline="false" data-width="28" data-height="28" style="color:white;"></span>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold text-2xl mb-2">Proveedores de Servicios</h3>
+                            <p class="text-[#CFCFE6] leading-relaxed">Personas que quieren ofrecer servicios domésticos para obtener ingresos extra</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3 bg-[#0F0F12]/50 backdrop-blur-sm rounded-xl p-4 benefit-item">
+                            <div class="w-2 h-2 rounded-full bg-gradient-to-r from-[#b79ef7] to-[#8b6be6]"></div>
+                            <span class="text-[#E6E1F5] font-medium text-sm">Plataforma para promocionar tus servicios</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-[#0F0F12]/50 backdrop-blur-sm rounded-xl p-4 benefit-item">
+                            <div class="w-2 h-2 rounded-full bg-gradient-to-r from-[#b79ef7] to-[#8b6be6]"></div>
+                            <span class="text-[#E6E1F5] font-medium text-sm">Acceso a nuevos clientes</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-[#0F0F12]/50 backdrop-blur-sm rounded-xl p-4 benefit-item">
+                            <div class="w-2 h-2 rounded-full bg-gradient-to-r from-[#b79ef7] to-[#8b6be6]"></div>
+                            <span class="text-[#E6E1F5] font-medium text-sm">Sistema de pagos seguro</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-[#0F0F12]/50 backdrop-blur-sm rounded-xl p-4 benefit-item">
+                            <div class="w-2 h-2 rounded-full bg-gradient-to-r from-[#b79ef7] to-[#8b6be6]"></div>
+                            <span class="text-[#E6E1F5] font-medium text-sm">Gestión de horarios y reservas</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Segment 2 -->
+                <div class="group bg-gradient-to-br from-[#0b2f31] via-[#0e3134] to-[#112c2d] border border-[#123233] rounded-3xl p-8 md:p-12 segment-card shadow-[0_8px_30px_rgba(3,22,24,0.6)]" style="animation-delay:200ms;">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5">
+                        <div class="flex items-start gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-[#2fe8ff] to-[#00c2ff] flex items-center justify-center transform transition-transform duration-300 group-hover:-translate-y-2 group-hover:scale-105 group-hover:shadow-2xl">
+                            <!-- Iconify: lupa (MaterialDesign mdi:magnify) -->
+                            <span class="iconify" data-icon="mdi:magnify" data-inline="false" data-width="28" data-height="28" style="color:white;"></span>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold text-2xl mb-2">Buscadores de Soluciones</h3>
+                            <p class="text-[#B7D9DB] leading-relaxed">Personas que desean encontrar rápidamente a alguien que resuelva un problema doméstico</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3 bg-[#04292A]/40 backdrop-blur-sm rounded-xl p-4 benefit-item">
+                            <div class="w-2 h-2 rounded-full bg-[#2fe8ff]"></div>
+                            <span class="text-white font-medium text-sm">Encuentra especialistas verificados</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-[#04292A]/40 backdrop-blur-sm rounded-xl p-4 benefit-item">
+                            <div class="w-2 h-2 rounded-full bg-[#2fe8ff]"></div>
+                            <span class="text-white font-medium text-sm">Compara precios y servicios</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-[#04292A]/40 backdrop-blur-sm rounded-xl p-4 benefit-item">
+                            <div class="w-2 h-2 rounded-full bg-[#2fe8ff]"></div>
+                            <span class="text-white font-medium text-sm">Lee reseñas de otros usuarios</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-[#04292A]/40 backdrop-blur-sm rounded-xl p-4 benefit-item">
+                            <div class="w-2 h-2 rounded-full bg-[#2fe8ff]"></div>
+                            <span class="text-white font-medium text-sm">Contrata con confianza</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Segment 3: Usuarios Ocupados - verde oscuro (según imagen adjunta) -->
+                <div class="group bg-gradient-to-br from-[#0f3b2d] via-[#153f2f] to-[#0f3328] border border-[#122e26] rounded-3xl p-8 md:p-12 segment-card" style="animation-delay:400ms;">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                        <div class="lg:col-span-5">
+                            <div class="flex items-start gap-4 mb-6">
+                                <div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-[#6fffcf] to-[#17e38a] flex items-center justify-center transform transition-transform duration-300 group-hover:-translate-y-2 group-hover:scale-105 group-hover:shadow-2xl shadow-md">
+                                    <!-- Iconify: reloj (MaterialDesign mdi:clock-outline) -->
+                                    <span class="iconify" data-icon="mdi:clock-outline" data-inline="false" data-width="28" data-height="28" style="color:white;"></span>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-bold text-2xl mb-2">Usuarios Ocupados</h3>
+                                    <p class="text-[#BFDCCB] leading-relaxed">Usuarios que necesitan un servicio doméstico sin perder tiempo desplazándose a buscarlo</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-7">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="flex items-center gap-3 bg-[#07352f]/40 backdrop-blur-sm rounded-xl p-4 benefit-item">
+                                    <div class="w-2 h-2 rounded-full bg-[#3fffb8]"></div>
+                                    <span class="text-white font-medium text-sm">Ahorra tiempo y esfuerzo</span>
+                                </div>
+
+                                <div class="flex items-center gap-3 bg-[#07352f]/40 backdrop-blur-sm rounded-xl p-4 benefit-item">
+                                    <div class="w-2 h-2 rounded-full bg-[#3fffb8]"></div>
+                                    <span class="text-white font-medium text-sm">Servicios a domicilio</span>
+                                </div>
+
+                                <div class="flex items-center gap-3 bg-[#07352f]/40 backdrop-blur-sm rounded-xl p-4 benefit-item">
+                                    <div class="w-2 h-2 rounded-full bg-[#3fffb8]"></div>
+                                    <span class="text-white font-medium text-sm">Reserva desde tu celular</span>
+                                </div>
+
+                                <div class="flex items-center gap-3 bg-[#07352f]/40 backdrop-blur-sm rounded-xl p-4 benefit-item">
+                                    <div class="w-2 h-2 rounded-full bg-[#3fffb8]"></div>
+                                    <span class="text-white font-medium text-sm">Seguimiento en tiempo real</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+                <!-- Stats -->
+                <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="stat-card">
+                    <div class="text-4xl font-bold bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent mb-2">1000+</div>
+                    <div class="text-[#B0B0B0]">Proveedores Verificados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="text-4xl font-bold bg-gradient-to-r from-[#4facfe] to-[#00f2fe] bg-clip-text text-transparent mb-2">24/7</div>
+                    <div class="text-[#B0B0B0]">Disponibilidad</div>
+                </div>
+                <div class="stat-card">
+                    <div class="text-4xl font-bold bg-gradient-to-r from-[#43e97b] to-[#38f9d7] bg-clip-text text-transparent mb-2">98%</div>
+                    <div class="text-[#B0B0B0]">Satisfacción del Cliente</div>
+                </div>
+                </div>
+            </div>
+            </section>
+
+            <script>
+            if (window.lucide) lucide.createIcons();
+            document.addEventListener('DOMContentLoaded', function(){
+                const header = document.getElementById('site-header');
+                const mobileBtn = document.getElementById('mobile-menu-button');
+                const drawer = document.getElementById('mobile-drawer');
+                let menuOpen = false;
+
+                // SVG inline para menú / cerrar (fallback)
+                const menuSvg = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M3 6h18"></path>
+                        <path d="M3 12h18"></path>
+                        <path d="M3 18h18"></path>
+                    </svg>`;
+
+                const closeSvg = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 6L6 18"></path>
+                        <path d="M6 6l12 12"></path>
+                    </svg>`;
+
+                function setMenu(open){
+                    menuOpen=!!open;
+                    if(!drawer) return;
+                    drawer.classList.toggle('hidden', !menuOpen);
+                    if(mobileBtn) mobileBtn.setAttribute('aria-expanded', String(menuOpen));
+                    if(mobileBtn){
+                        mobileBtn.querySelector('#mobile-menu-icon')?.remove();
+                        mobileBtn.insertAdjacentHTML('afterbegin', menuOpen ? closeSvg : menuSvg);
+                    }
+                }
+
+                mobileBtn?.addEventListener('click', ()=> setMenu(!menuOpen));
+                window.addEventListener('resize', ()=> { if(window.innerWidth>=640 && menuOpen) setMenu(false); });
+
+                // cerrar menú al seleccionar enlace (UX móvil)
+                const mobileLinks = document.querySelectorAll('.mobile-link');
+                mobileLinks.forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+                function onScroll(){
+                    if(window.scrollY>0){
+                        header.classList.add('shadow-[0_2px_6px_rgba(0,0,0,0.06)');
+                        header.classList.add('dark:shadow-[0_2px_6px_rgba(0,0,0,0.3)]');
+                    } else {
+                        header.classList.remove('shadow-[0_2px_6px_rgba(0,0,0,0.06)');
+                        header.classList.remove('dark:shadow-[0_2px_6px_rgba(0,0,0,0.3)]');
+                    }
+                }
+                window.addEventListener('scroll', onScroll); onScroll();
+
+                // Canvas accordion logic (expand/collapse)
+                let expanded = null;
+                function collapseAll(){
+                    document.querySelectorAll('.collapsible').forEach(el => { el.style.maxHeight='0px'; el.style.opacity='0'; });
+                    document.querySelectorAll('.chev-up').forEach(i => i.classList.add('hidden'));
+                    document.querySelectorAll('.chev-down').forEach(i => i.classList.remove('hidden'));
+                }
+                collapseAll();
+
+                document.querySelectorAll('.header-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.getAttribute('data-id');
+                        const content = document.querySelector(`.collapsible[data-content="${id}"]`);
+                        if(!content) return;
+                        if(expanded === id){
+                            content.style.maxHeight='0px'; content.style.opacity='0'; expanded = null;
+                            btn.querySelector('.chev-up')?.classList.add('hidden'); btn.querySelector('.chev-down')?.classList.remove('hidden');
+                        } else {
+                            collapseAll();
+                            content.style.maxHeight = content.scrollHeight + 'px'; content.style.opacity='1'; expanded = id;
+                            document.querySelectorAll('.header-btn').forEach(b => { b.querySelector('.chev-up')?.classList.add('hidden'); b.querySelector('.chev-down')?.classList.remove('hidden'); });
+                            btn.querySelector('.chev-up')?.classList.remove('hidden'); btn.querySelector('.chev-down')?.classList.add('hidden');
+                        }
+                    });
+                });
+
+                // Canvas interactive buttons
+                document.querySelectorAll('[data-target]').forEach(b => {
+                    b.addEventListener('click', () => {
+                        const target = b.getAttribute('data-target');
+                        const headerBtn = document.querySelector(`.header-btn[data-id="${target}"]`);
+                        if (headerBtn) headerBtn.click();
+                        document.querySelectorAll('[data-target]').forEach(x => x.classList.remove('active-canvas'));
+                        b.classList.add('active-canvas');
+                        if (b.classList.contains('active-canvas')) b.classList.add('bg-gradient-to-r','text-white');
+                        document.querySelectorAll('[data-target]').forEach(x => { if(!x.classList.contains('active-canvas')) x.classList.remove('bg-gradient-to-r','text-white'); });
+                    });
+                });
+
+                // Header nav active + style injection and utility classes (copied from index.html)
+                function markActive(){
+                    const path = window.location.pathname.toLowerCase();
+                    const pathFile = (path.split('/').pop() || '').replace('.html','');
+                    document.querySelectorAll('.nav-link, .mobile-link').forEach(a=>{
+                        const raw = (a.getAttribute('data-to')||a.getAttribute('href')||'').toLowerCase();
+                        const target = raw.replace(/^\/+/, '').replace(/\.html$/, '').replace(/^#/, '');
+                        let isActive = false;
+                        if (target === 'inicio' || target === 'index' || target === '') {
+                            isActive = (path === '/' || pathFile === '' || pathFile === 'index' || path.includes('index.html'));
+                        } else {
+                            if (pathFile === target) isActive = true;
+                            else if (pathFile === target.replace(/s$/, '')) isActive = true;
+                            else if (pathFile.replace(/s$/, '') === target) isActive = true;
+                            else if (path.includes(target)) isActive = true;
+                        }
+                        if(isActive){ a.classList.add('active-nav'); a.setAttribute('aria-current','page'); } else { a.classList.remove('active-nav'); a.removeAttribute('aria-current'); }
+                    });
+                }
+
+                markActive();
+
+                document.querySelectorAll('.nav-link').forEach(a=> a.classList.add('text-sm','font-medium','transition-colors','duration-150','ease-out','text-[#6E6E6E]','dark:text-[#A0A0A0]','hover:text-[#2B2B2B]','dark:hover:text-[#E0E0E0]'));
+                document.querySelectorAll('.mobile-link').forEach(a=> a.classList.add('text-sm','font-medium','transition-colors','duration-150','ease-out','text-[#6E6E6E]','dark:text-white','hover:text-[#2B2B2B]','dark:hover:text-[#E0E0E0]'));
+                const style=document.createElement('style'); style.innerHTML = `.active-nav { background-color: transparent; color: inherit !important; padding: 6px 14px; border-radius: 9999px; border: 1px solid #E5E5E5; } .dark .active-nav { background-color: transparent; color: inherit !important; border-color: #404040; }`; document.head.appendChild(style);
+
+                // feedback immediate on pointerdown
+                document.querySelectorAll('.nav-link, .mobile-link').forEach(a=> a.addEventListener('pointerdown', ()=>{ document.querySelectorAll('.nav-link, .mobile-link').forEach(x=>x.classList.remove('active-nav')); a.classList.add('active-nav'); }));
+            });
+            </script>
+        </body>
+    </html>
+

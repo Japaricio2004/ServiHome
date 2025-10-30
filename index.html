@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SERVISHOME - Inicio</title>
+    <meta name="description" content="Página principal de SERVISHOME" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+    <style>
+        /* Hero frame - solo un borde sutil sin fondo adicional */
+        .hero-frame {
+            border: 2px solid #3a3a3a;
+            border-radius: 32px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Header -->
+    <header id="site-header" class="sticky top-0 z-50 bg-white dark:bg-[#1E1E1E] border border-[#E9E9E9] dark:border-[#333333] transition-shadow duration-150 ease-out" role="banner">
+        <div class="px-6 sm:px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3 sm:gap-2">
+                    <a href="index.html" aria-label="SERVISHOME - Inicio">
+                        <img src="https://ucarecdn.com/b4a1dcd9-68ec-4eae-b51e-89a26aa5728e/-/format/auto/" alt="SERVISHOME - Servicio para el Hogar" class="h-10 w-auto sm:h-8 transition-transform duration-300 hover:scale-105" />
+                    </a>
+                </div>
+
+                <nav id="desktop-nav" class="hidden sm:flex items-center gap-8 md:gap-5" aria-label="Navegación principal">
+                            <a href="index.html" data-to="/inicio" class="nav-link">Inicio</a>
+                            <a href="servicio.html" data-to="/servicios" class="nav-link">Servicios</a>
+                            <a href="modelo.html" data-to="/modelo" class="nav-link">Modelo</a>
+                            <a href="contacto.html" data-to="/contacto" class="nav-link">Contacto</a>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <button id="mobile-menu-button" class="sm:hidden p-2 text-[#A0A0A0] hover:text-white transition-colors duration-150 active:scale-[0.95]" aria-label="Alternar menú" aria-expanded="false">
+                        <!-- SVG inline para hamburguesa (visible si lucide no carga) -->
+                        <svg id="mobile-menu-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M3 6h18"></path>
+                            <path d="M3 12h18"></path>
+                            <path d="M3 18h18"></path>
+                        </svg>
+                    </button>
+
+                    <a href="#" class="hidden sm:inline-flex bg-gradient-to-r from-[#667eea] to-[#764ba2] hover:from-[#5a6fd8] hover:to-[#6a4190] text-white font-semibold text-sm px-6 py-2.5 rounded-full transition-all duration-150 ease-out active:scale-[0.98] items-center justify-center" style="box-shadow:0 4px 12px rgba(102,126,234,0.3); height:40px;">Solicitar Servicio</a>
+                </div>
+            </div>
+        </div>
+
+    <div id="mobile-drawer" class="sm:hidden bg-white dark:bg-[#1E1E1E] border-t border-[#E9E9E9] dark:border-[#333333] py-4 hidden" role="navigation" aria-label="Menú móvil">
+            <nav class="flex flex-col gap-4 px-6">
+                <a href="index.html" data-to="/inicio" class="mobile-link">Inicio</a>
+                <a href="servicio.html" data-to="/servicios" class="mobile-link">Servicios</a>
+                <a href="modelo.html" data-to="/modelo" class="mobile-link">Modelo</a>
+                <a href="contacto.html" data-to="/contacto" class="mobile-link">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="min-h-screen flex items-center justify-center px-6 py-12">
+        <!-- Hero section -->
+        <section class="relative w-full max-w-5xl">
+            <div class="hero-frame relative">
+                <div class="relative bg-gradient-to-br from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a] rounded-[30px] p-12 sm:p-16 overflow-hidden">
+                    <!-- Decorative background circles -->
+                    <div aria-hidden="true" class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-[#667eea]/10 to-[#764ba2]/10 blur-3xl"></div>
+                    <div aria-hidden="true" class="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-[#764ba2]/10 to-[#667eea]/10 blur-3xl"></div>
+
+                    <!-- Content -->
+                    <div class="relative z-10 text-center">
+                        <!-- Logo -->
+                        <img src="https://ucarecdn.com/b4a1dcd9-68ec-4eae-b51e-89a26aa5728e/-/format/auto/" alt="SERVISHOME logo" class="mx-auto w-20 h-auto mb-6" />
+
+                        <!-- Subtitle -->
+                        <div class="text-sm font-medium text-gray-400 mb-6 flex items-center justify-center gap-2">
+                            🏠 Servicios a domicilio seguros y confiables...
+                        </div>
+
+                        <!-- Main Headline -->
+                        <div class="mb-6">
+                            <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight tracking-tight mb-2">
+                                <span class="text-white">Conectamos hogares</span>
+                            </h1>
+                            <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight tracking-tight mb-2">
+                                <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#667eea] to-[#764ba2]">con servicios</span>
+                            </h1>
+                            <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight tracking-tight">
+                                <span class="text-white">de calidad</span>
+                            </h1>
+                        </div>
+
+                        <!-- Description -->
+                        <p class="text-center text-base sm:text-lg text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                            Una plataforma única que ofrece mudanza, plomería, electricidad, limpieza y más. Encuentra proveedores verificados, compara opciones y solicita servicios de forma rápida, segura y confiable.
+                        </p>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row justify-center gap-4">
+                            <a href="servicio.html" class="inline-flex items-center justify-center bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white font-semibold text-base px-10 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200">
+                                Solicitar Servicio
+                            </a>
+                            <a href="contacto.html" class="inline-flex items-center justify-center border-2 border-[#667eea] text-[#667eea] bg-transparent font-semibold text-base px-10 py-4 rounded-full hover:bg-[#667eea]/10 transition-all duration-200">
+                                Ofrecer Servicios
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        if (window.lucide) lucide.createIcons();
+        
+        document.addEventListener('DOMContentLoaded', function(){
+            const header = document.getElementById('site-header');
+            const mobileBtn = document.getElementById('mobile-menu-button');
+            const drawer = document.getElementById('mobile-drawer');
+            let menuOpen = false;
+
+            // SVG strings para menú / cerrar (fallback inline)
+            const menuSvg = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M3 6h18"></path>
+                    <path d="M3 12h18"></path>
+                    <path d="M3 18h18"></path>
+                </svg>`;
+
+            const closeSvg = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 6L6 18"></path>
+                    <path d="M6 6l12 12"></path>
+                </svg>`;
+
+            function setMenu(open){ 
+                menuOpen = !!open; 
+                if(!drawer) return;
+                drawer.classList.toggle('hidden', !menuOpen); 
+                if(mobileBtn) mobileBtn.setAttribute('aria-expanded', String(menuOpen)); 
+                if(mobileBtn){
+                    // reemplazar icono inline
+                    mobileBtn.querySelector('#mobile-menu-icon')?.remove();
+                    mobileBtn.insertAdjacentHTML('afterbegin', menuOpen ? closeSvg : menuSvg);
+                }
+            }
+
+            mobileBtn?.addEventListener('click', () => setMenu(!menuOpen));
+            window.addEventListener('resize', () => { 
+                if(window.innerWidth >= 640 && menuOpen) setMenu(false); 
+            });
+
+            // Cerrar menú al seleccionar un enlace dentro del drawer (UX móvil)
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            mobileLinks.forEach(a => a.addEventListener('click', () => setMenu(false)));
+            
+            function onScroll(){ 
+                if(window.scrollY > 0){ 
+                    header.classList.add('shadow-lg'); 
+                } else { 
+                    header.classList.remove('shadow-lg'); 
+                } 
+            }
+            
+            window.addEventListener('scroll', onScroll); 
+            onScroll();
+            
+            function markActive(){
+                const path = window.location.pathname.toLowerCase();
+                const pathFile = (path.split('/').pop() || '').replace('.html','');
+                document.querySelectorAll('.nav-link, .mobile-link').forEach(a => {
+                    const raw = (a.getAttribute('data-to') || a.getAttribute('href') || '').toLowerCase();
+                    const target = raw.replace(/^\/+/, '').replace(/\.html$/, '').replace(/^#/, '');
+                    let isActive = false;
+                    if (target === 'inicio' || target === 'index' || target === '') {
+                        isActive = (path === '/' || pathFile === '' || pathFile === 'index' || path.includes('index.html'));
+                    } else {
+                        if (pathFile === target) isActive = true;
+                        else if (pathFile === target.replace(/s$/, '')) isActive = true;
+                        else if (pathFile.replace(/s$/, '') === target) isActive = true;
+                        else if (path.includes(target)) isActive = true;
+                    }
+                    if(isActive){ 
+                        a.classList.add('active-nav'); 
+                        a.setAttribute('aria-current','page'); 
+                    } else { 
+                        a.classList.remove('active-nav'); 
+                        a.removeAttribute('aria-current'); 
+                    }
+                });
+            }
+            
+            markActive();
+            
+            document.querySelectorAll('.nav-link').forEach(a => a.classList.add('text-sm','font-medium','transition-colors','duration-150','ease-out','text-[#A0A0A0]','hover:text-white'));
+            document.querySelectorAll('.mobile-link').forEach(a => a.classList.add('text-sm','font-medium','transition-colors','duration-150','ease-out','text-[#A0A0A0]','hover:text-white'));
+            
+            const style = document.createElement('style'); 
+            style.innerHTML = `.active-nav { background-color: transparent; color: white !important; padding: 6px 14px; border-radius: 9999px; border: 1px solid #404040; }`; 
+            document.head.appendChild(style);
+        });
+    </script>
+        
+</body>
+</html>
