@@ -67,41 +67,23 @@
 
           <!-- Services Grid -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Plomería -->
-            <div id="card-plomeria" class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] service-card cursor-pointer" style="animation-delay:0ms;" data-service="Plomería" data-image="images/gasfitero.jpeg" data-summary="Reparaciones e instalaciones de plomería: arreglos de fugas, cambio de grifería y mantenimiento general.">
+            <!-- Plomería (ahora link a página dedicada) -->
+            <a href="plomeria.html" id="card-plomeria" class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] service-card link-card" style="animation-delay:0ms;" data-service="Plomería">
               <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#667eea] to-[#764ba2] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <!-- Iconify: llave inglesa (mdi:wrench) -->
                 <span class="iconify" data-icon="mdi:wrench" data-inline="false" data-width="20" data-height="20" style="color:white;"></span>
               </div>
               <h3 class="text-black dark:text-white font-semibold text-lg mb-2">Plomería</h3>
                 <p class="text-[#6B6B6B] dark:text-[#B0B0B0] text-sm leading-relaxed">Reparaciones e instalaciones de plomería</p>
-
-                <!-- Detalle expandible dentro del card (hidden por defecto) -->
-                <div class="service-details mt-4 overflow-hidden max-h-0 transition-[max-height] duration-300" aria-hidden="true">
-                  <div class="flex flex-col gap-4 items-start">
-                      <img src="images/gasfitero.jpeg" alt="Gasfitero" class="w-full h-40 object-cover rounded-lg shadow-sm" />
-                      <p class="text-sm text-gray-700 dark:text-gray-300">Reparaciones e instalaciones de plomería: arreglos de fugas, cambio de grifería y mantenimiento general. Servicio rápido y confiable.</p>
-                    </div>
-                </div>
-              </div>
+            </a>
 
             <!-- Electricidad -->
-            <div id="card-electricidad" class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] service-card cursor-pointer" style="animation-delay:100ms;" data-service="Electricidad" data-image="images/electricista.jpeg" data-summary="Instalaciones y reparaciones eléctricas: arreglos, instalación de puntos eléctricos y mantenimiento por técnicos certificados.">
+            <a href="electricidad.html" id="card-electricidad" class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] service-card link-card" style="animation-delay:100ms;" data-service="Electricidad">
               <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#f093fb] to-[#f5576c] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <!-- Iconify: rayo / electricidad (MaterialDesign mdi:flash) -->
                 <span class="iconify" data-icon="mdi:flash" data-inline="false" data-width="20" data-height="20" style="color:white;"></span>
               </div>
               <h3 class="text-black dark:text-white font-semibold text-lg mb-2">Electricidad</h3>
               <p class="text-[#6B6B6B] dark:text-[#B0B0B0] text-sm leading-relaxed">Instalaciones y reparaciones eléctricas</p>
-
-              <!-- Detalle expandible dentro del card (hidden por defecto) -->
-              <div class="service-details mt-4 overflow-hidden max-h-0 transition-[max-height] duration-300" aria-hidden="true">
-                <div class="flex flex-col gap-4 items-start">
-                  <img src="images/electricista.jpeg" alt="Electricista" class="w-full h-40 object-cover rounded-lg shadow-sm" />
-                  <p class="text-sm text-gray-700 dark:text-gray-300">Instalaciones y reparaciones eléctricas: arreglos, instalación de puntos eléctricos y mantenimiento por técnicos certificados.</p>
-                </div>
-              </div>
-            </div>
+            </a>
 
             <!-- Limpieza -->
             <div id="card-limpieza" class="group bg-white dark:bg-[#1E1E1E] border border-[#E6E6E6] dark:border-[#333333] rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] service-card cursor-pointer" style="animation-delay:200ms;" data-service="Limpieza" data-image="images/limpieza.jpg" data-summary="Servicios de limpieza profesional: limpieza profunda, desinfección y mantenimiento regular para hogares y oficinas.">

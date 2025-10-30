@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Electricidad - SERVISHOME</title>
+    <meta name="description" content="Perfiles de electricistas - SERVISHOME" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+</head>
+<body class="bg-[#F8F9FA] dark:bg-[#0F0F0F] text-gray-900 dark:text-white">
+    <!-- Header -->
+    <header id="site-header" class="sticky top-0 z-50 bg-white dark:bg-[#1E1E1E] border border-[#E9E9E9] dark:border-[#333333] transition-shadow duration-150 ease-out" role="banner">
+    <div class="px-6 sm:px-4 py-3">
+        <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3 sm:gap-2">
+            <a href="index.html" aria-label="SERVISHOME - Inicio">
+            <img src="https://ucarecdn.com/b4a1dcd9-68ec-4eae-b51e-89a26aa5728e/-/format/auto/" alt="SERVISHOME - Servicio para el Hogar" class="h-10 w-auto sm:h-8 transition-transform duration-300 hover:scale-105" />
+            </a>
+        </div>
+
+        <nav id="desktop-nav" class="hidden sm:flex items-center gap-8 md:gap-5" aria-label="Navegación principal">
+            <a href="index.html" data-to="/inicio" class="nav-link">Inicio</a>
+            <a href="servicio.html" data-to="/servicios" class="nav-link">Servicios</a>
+            <a href="modelo.html" data-to="/modelo" class="nav-link">Modelo</a>
+            <a href="contacto.html" data-to="/contacto" class="nav-link">Contacto</a>
+        </nav>
+
+        <div class="flex items-center gap-4">
+            <a href="#" class="bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] hover:from-[#0284c7] hover:to-[#0891b2] text-white font-semibold text-sm px-6 py-2.5 rounded-full transition-all duration-150 ease-out active:scale-[0.98]" style="box-shadow:0 4px 12px rgba(14,165,233,0.3); height:40px; line-height:16px; display:inline-flex; align-items:center; justify-content:center;">Solicitar Servicio</a>
+        </div>
+        </div>
+    </div>
+
+    <!-- Drawer móvil eliminado: la página mantiene el botón "Volver a Servicios" en el hero para navegación móvil -->
+    </header>
+
+    <main class="max-w-6xl mx-auto py-12 px-6">
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-[#fef3c7] to-[#fef08a] dark:from-[#713f12] dark:to-[#78350f] rounded-2xl p-8 mb-10 shadow-lg">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold mb-3">Electricistas profesionales a tu alcance</h1>
+            <p class="text-gray-700 dark:text-gray-300 mb-6">Contrata electricistas certificados para instalaciones, reparaciones y mantenimientos. Llama directamente desde el perfil.</p>
+            <div class="flex items-center gap-3">
+            <a href="servicio.html" class="text-sm text-[#0284c7] dark:text-[#38bdf8] font-medium hover:underline">← Volver a Servicios</a>
+            </div>
+        </div>
+        <div>
+            <img src="images/electricista.jpeg" alt="Servicio de electricidad" class="w-full h-48 object-cover rounded-xl shadow-md" />
+        </div>
+        </div>
+    </section>
+
+    <!-- Grid de perfiles -->
+    <section id="profiles">
+        <h2 class="text-2xl font-bold mb-6">Nuestros Profesionales</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Perfil 1 -->
+        <article class="bg-white dark:bg-[#1E1E1E] border border-gray-200 dark:border-[#333333] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+            <div class="relative">
+                <img src="images/electricista.jpeg" alt="Luis Fernández" class="w-full h-48 object-cover" />
+                <div class="absolute top-3 right-3 bg-white/90 dark:bg-black/70 px-3 py-1 rounded-full">
+                    <span class="text-sm font-bold">⭐ 4.9</span>
+                </div>
+            </div>
+            <div class="p-5">
+                <h3 class="font-bold text-lg mb-1">Luis Fernández</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Instalaciones domiciliarias</p>
+                <div class="flex gap-2">
+                    <a href="tel:+51910000001" class="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#10b981] to-[#059669] hover:from-[#059669] hover:to-[#047857] text-white font-semibold px-3 py-2.5 rounded-lg text-sm shadow transition-all">
+                        <span class="iconify" data-icon="mdi:phone" data-inline="true" style="font-size:18px;"></span>
+                        Llamar
+                    </a>
+                    <a href="#" class="flex-1 inline-flex items-center justify-center gap-2 bg-white dark:bg-[#2A2A2A] border-2 border-gray-200 dark:border-[#404040] hover:border-[#0ea5e9] dark:hover:border-[#38bdf8] text-gray-700 dark:text-gray-300 font-semibold px-3 py-2.5 rounded-lg text-sm transition-all">
+                        <span class="iconify" data-icon="mdi:calendar-clock" data-inline="true" style="font-size:18px;"></span>
+                        Agendar
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Perfil 2 -->
+        <article class="bg-white dark:bg-[#1E1E1E] border border-gray-200 dark:border-[#333333] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+            <div class="relative">
+                <img src="images/electricista.jpeg" alt="Ana Castillo" class="w-full h-48 object-cover" />
+                <div class="absolute top-3 right-3 bg-white/90 dark:bg-black/70 px-3 py-1 rounded-full">
+                    <span class="text-sm font-bold">⭐ 4.8</span>
+                </div>
+            </div>
+            <div class="p-5">
+                <h3 class="font-bold text-lg mb-1">Erick Castillo</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Reparación de cortocircuitos</p>
+                <div class="flex gap-2">
+                    <a href="tel:+51910000002" class="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] hover:from-[#0284c7] hover:to-[#0891b2] text-white font-semibold px-3 py-2.5 rounded-lg text-sm shadow transition-all">
+                        <span class="iconify" data-icon="mdi:phone" data-inline="true" style="font-size:18px;"></span>
+                        Llamar
+                    </a>
+                    <a href="#" class="flex-1 inline-flex items-center justify-center gap-2 bg-white dark:bg-[#2A2A2A] border-2 border-gray-200 dark:border-[#404040] hover:border-[#0ea5e9] dark:hover:border-[#38bdf8] text-gray-700 dark:text-gray-300 font-semibold px-3 py-2.5 rounded-lg text-sm transition-all">
+                        <span class="iconify" data-icon="mdi:calendar-clock" data-inline="true" style="font-size:18px;"></span>
+                        Agendar
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Perfil 3 -->
+        <article class="bg-white dark:bg-[#1E1E1E] border border-gray-200 dark:border-[#333333] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+            <div class="relative">
+                <img src="images/electricista.jpeg" alt="Miguel Torres" class="w-full h-48 object-cover" />
+                <div class="absolute top-3 right-3 bg-white/90 dark:bg-black/70 px-3 py-1 rounded-full">
+                    <span class="text-sm font-bold">⭐ 4.7</span>
+                </div>
+            </div>
+            <div class="p-5">
+                <h3 class="font-bold text-lg mb-1">Miguel Torres</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Tableros eléctricos y mantenimiento</p>
+                <div class="flex gap-2">
+                    <a href="tel:+51910000003" class="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#f59e0b] to-[#f97316] hover:from-[#d97706] hover:to-[#ea580c] text-white font-semibold px-3 py-2.5 rounded-lg text-sm shadow transition-all">
+                        <span class="iconify" data-icon="mdi:phone" data-inline="true" style="font-size:18px;"></span>
+                        Llamar
+                    </a>
+                    <a href="#" class="flex-1 inline-flex items-center justify-center gap-2 bg-white dark:bg-[#2A2A2A] border-2 border-gray-200 dark:border-[#404040] hover:border-[#0ea5e9] dark:hover:border-[#38bdf8] text-gray-700 dark:text-gray-300 font-semibold px-3 py-2.5 rounded-lg text-sm transition-all">
+                        <span class="iconify" data-icon="mdi:calendar-clock" data-inline="true" style="font-size:18px;"></span>
+                        Agendar
+                    </a>
+                </div>
+            </div>
+        </article>
+        
+        </div>
+    </section>
+
+    <!-- Botones de acción principales -->
+    <section class="mt-12 bg-white dark:bg-[#1E1E1E] border border-gray-200 dark:border-[#333333] rounded-2xl p-8 shadow-sm">
+        <div class="text-center mb-6">
+            <h3 class="text-2xl font-bold mb-2">¿Necesitas un servicio personalizado?</h3>
+            <p class="text-gray-600 dark:text-gray-400">Elige la opción que mejor se adapte a tus necesidades</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
+            <a href="#" class="flex flex-col items-center gap-3 bg-gradient-to-br from-[#0ea5e9] to-[#06b6d4] hover:from-[#0284c7] hover:to-[#0891b2] text-white font-semibold p-6 rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-[0.98] min-w-[200px]">
+                <span class="iconify" data-icon="mdi:tools" data-inline="true" style="font-size:40px;"></span>
+                <span class="text-lg">Solicitar Servicio</span>
+                <span class="text-sm opacity-90">Atención inmediata</span>
+            </a>
+            <a href="#" class="flex flex-col items-center gap-3 bg-gradient-to-br from-[#10b981] to-[#059669] hover:from-[#059669] hover:to-[#047857] text-white font-semibold p-6 rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-[0.98] min-w-[200px]">
+                <span class="iconify" data-icon="mdi:calendar-check" data-inline="true" style="font-size:40px;"></span>
+                <span class="text-lg">Reservar Cita</span>
+                <span class="text-sm opacity-90">Agenda con anticipación</span>
+            </a>
+        </div>
+    </section>
+    </main>
+
+    <script>
+    if (window.lucide) lucide.createIcons();
+    document.addEventListener('DOMContentLoaded', function(){
+        // Mantener sólo markActive y estilos; el menú hamburguesa fue eliminado en esta página por petición del usuario
+        function markActive(){
+        const path = window.location.pathname.toLowerCase();
+        const pathFile = (path.split('/').pop() || '').replace('.html','');
+        document.querySelectorAll('.nav-link').forEach(a=>{
+            const raw = (a.getAttribute('data-to')||a.getAttribute('href')||'').toLowerCase();
+            const target = raw.replace(/^\/+/,'').replace(/\.html$/,'').replace(/^#/,'');
+            let isActive = false;
+            if (target === 'inicio' || target === 'index' || target === '') {
+            isActive = (path === '/' || pathFile === '' || pathFile === 'index' || path.includes('index.html'));
+            } else {
+            if (pathFile === target) isActive = true;
+            else if (pathFile === target.replace(/s$/,'')) isActive = true;
+            else if (pathFile.replace(/s$/,'') === target) isActive = true;
+            else if (path.includes(target)) isActive = true;
+            }
+            if(isActive){ a.classList.add('active-nav'); a.setAttribute('aria-current','page'); } else { a.classList.remove('active-nav'); a.removeAttribute('aria-current'); }
+        });
+        }
+        markActive();
+        document.querySelectorAll('.nav-link').forEach(a=> a.classList.add('text-sm','font-medium','transition-colors','duration-150','ease-out','text-[#6E6E6E]','dark:text-[#A0A0A0]','hover:text-[#2B2B2B]','dark:hover:text-[#E0E0E0]'));
+        const style=document.createElement('style'); style.innerHTML = `.active-nav { background-color: transparent; color: inherit !important; padding: 6px 14px; border-radius: 9999px; border: 1px solid #E5E5E5; } .dark .active-nav { background-color: transparent; color: inherit !important; border-color: #404040; }`; document.head.appendChild(style);
+    });
+    </script>
+</body>
+</html>
