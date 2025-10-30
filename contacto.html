@@ -90,17 +90,18 @@
             <!-- CTA principal eliminado por petición del usuario: Título, párrafo y botones 'Comenzar Ahora / Ver Demo' -->
             <div class="w-full h-px mb-8 bg-transparent"></div>
 
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8">
             <div class="flex flex-col gap-3">
                 <span class="text-[#868676] dark:text-[#A0A0A0] text-lg uppercase tracking-wider" style="letter-spacing:0.05em; font-weight:700;">Contacto</span>
-                <div class="flex items-center gap-4">
+                <!-- En móvil: apilar correo y iconos; en sm+: mantener en línea -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
                     <a href="mailto:hola@servishome.com" class="text-black dark:text-white hover:text-[#667eea] dark:hover:text-[#667eea] transition-colors duration-150 text-2xl sm:text-3xl font-semibold">hola@servishome.com</a>
-                    <div class="flex items-center gap-3">
-                        <a href="https://www.facebook.com/profile.php?id=61582935484307&rdid=IQtYb2YGJcYAFgSH&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1EdT6DJyWE%2F#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="p-2 rounded-full bg-[#1877F2] hover:scale-105 transition-transform duration-150">
-                            <span class="iconify" data-icon="mdi:facebook" data-inline="false" data-width="18" data-height="18" style="color:white;"></span>
+                    <div class="flex items-center gap-3 mt-2 sm:mt-0">
+                        <a href="https://www.facebook.com/profile.php?id=61582935484307&rdid=IQtYb2YGJcYAFgSH&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1EdT6DJyWE%2F#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="p-2 sm:p-3 rounded-full bg-[#1877F2] hover:scale-105 transition-transform duration-150">
+                            <span class="iconify inline-block text-white text-[14px] sm:text-[18px]" data-icon="mdi:facebook" data-inline="true" aria-hidden="true"></span>
                         </a>
-                        <a href="https://www.instagram.com/servishomepe/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="p-2 rounded-full bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] hover:scale-105 transition-transform duration-150">
-                            <span class="iconify" data-icon="mdi:instagram" data-inline="false" data-width="18" data-height="18" style="color:white;"></span>
+                        <a href="https://www.instagram.com/servishomepe/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="p-2 sm:p-3 rounded-full bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] hover:scale-105 transition-transform duration-150">
+                            <span class="iconify inline-block text-white text-[14px] sm:text-[18px]" data-icon="mdi:instagram" data-inline="true" aria-hidden="true"></span>
                         </a>
                     </div>
                 </div>
